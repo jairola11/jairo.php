@@ -1,23 +1,18 @@
 <?php
 
-function fibonacci($n) {
-    $secuencia = [0, 1]; 
+$limite = readline("Ingrese un número límite para la secuencia de Fibonacci: ");
 
-    while (end($secuencia) < $n) {
-        $longitud = count($secuencia);
-        $siguienteNumero = $secuencia[$longitud - 1] + $secuencia[$longitud - 2];
-        $secuencia[] = $siguienteNumero;
-    }
+$numero1 = 0;
+$numero2 = 1;
+$secuencia = "$numero1, $numero2";
 
-    return $secuencia;
+while ($numero2 < $limite) {
+    $numero3 = $numero1 + $numero2;
+    $secuencia .= ", $numero3";
+    $numero1 = $numero2;
+    $numero2 = $numero3;
 }
 
-echo "Ingrese el número límite para la secuencia de Fibonacci  ";
-$limite = intval(readline());
+echo "Secuencia de Fibonacci hasta el número $limite: $secuencia";
 
-$resultado = fibonacci($limite);
-echo "Secuencia de Fibonacci hasta {$limite}:\n";
-foreach ($resultado as $numero) {
-    echo $numero . " ";
-}
 ?>

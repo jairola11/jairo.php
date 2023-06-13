@@ -1,25 +1,23 @@
 <?php
+<?php
 
-function bubbleSort($lista) {
-    $n = count($lista);
-    for ($i = 0; $i < $n - 1; $i++) {
-        for ($j = 0; $j < $n - $i - 1; $j++) {
-            if ($lista[$j] > $lista[$j + 1]) {
-                $temp = $lista[$j];
-                $lista[$j] = $lista[$j + 1];
-                $lista[$j + 1] = $temp;
-            }
+$lista = readline("Ingrese una lista de números separados por comas: ");
+$nums = explode(",", $lista);
+
+foreach ($nums as &$num) {
+    $num = intval(trim($num));
+}
+
+$longitud = count($nums);
+for ($i = 0; $i < $longitud - 1; $i++) {
+    for ($j = 0; $j < $longitud - $i - 1; $j++) {
+        if ($nums[$j] < $nums[$j + 1]) {
+            $temp = $nums[$j];
+            $nums[$j] = $nums[$j + 1];
+            $nums[$j + 1] = $temp;
         }
     }
-    return $lista;
 }
-echo "Ingrese una lista de números pero separalos  por comas: ";
-$entrada = readline();
-$lista = explode(',', $entrada);
-$lista = array_map('intval', $lista);
-$listaOrdenada = bubbleSort($lista);
-echo "Lista ordenada es la siguente : ";
-foreach ($listaOrdenada as $numero) {
-    echo $numero . " ";
-}
+echo "Lista ordenada: " . implode(", ", $nums);
+
 ?>
