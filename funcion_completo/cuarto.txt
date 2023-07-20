@@ -1,0 +1,1 @@
+una funcion calcule la suma de todos los digitos enteros dados php 2+2+2 
