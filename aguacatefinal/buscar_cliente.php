@@ -24,10 +24,7 @@ $query = mysqli_query($con, $sql);
 <body>
     <div>
         <form action="update_cliente.php" method='POST'>
-            <!-- <div class="title"><h1 class="header">Buscar usuarios</h1></div>
-            <div class="date_con">
-                <input type="text" name="cedula" class="cedula datos" placeholder='Ingrese el número de documento del usuario'>
-                <input type="submit" value="Buscar"  class="send"> -->
+           
             </div>
         </form>
     </div>

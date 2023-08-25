@@ -46,11 +46,10 @@ $query = mysqli_query($con, $sql);
                 echo "<tr>";
                 echo "<td>" . $pisoRow['puestos'] . "</td>";
                 echo "<td>";
-                // Comprueba el estado y muestra "Ocupado" o "Disponible"
                 if ($pisoRow['estado'] == 1) {
-                    echo "Ocupado";
+                    echo "Ocupado ";
                 } else {
-                    echo "Disponible";
+                    echo "libre";
                 }
                 echo "</td>";
                 echo "</tr>";

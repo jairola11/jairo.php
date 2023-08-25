@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = mysqli_query($con, $sql);
 
     if ($query) {
-        header('Location: index.php'); // Redirige de vuelta a la página de búsqueda
+        header('Location: index.php');
     } else {
         echo "Error: " . mysqli_error($con);
     }

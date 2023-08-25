@@ -1,20 +1,11 @@
 <?php
-// Llamar el archivo de conexión
 include('conexion.php');
-
 $con = connection();
-
 $id = $_GET['id'];
-
 $sql = "SELECT * FROM autos WHERE placa='$id'";
-
 $query = mysqli_query($con, $sql);
-
 $row = mysqli_fetch_array($query);
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -14,7 +14,6 @@
 <div class="section">
         <h2>Buscar Vehículo</h2>
         <?php
-        // Código para buscar un vehículo
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["buscar"])) {
             $placaBuscada = $_POST["placaBuscada"];
             $infoVehiculo = $parqueadero->buscarVehiculo($placaBuscada);
@@ -46,7 +45,6 @@
         <h2>Resultado</h2>
         <div class="result">
             <?php
-            // Código para mostrar resultados
             ?>
         </div>
     </div>

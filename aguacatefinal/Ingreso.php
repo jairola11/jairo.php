@@ -15,7 +15,6 @@
     <div class="section">
         <h2>Ingreso de Vehículo</h2>
         <?php
-        // Código para ingresar un vehículo
         include 'Parqueadero.php';
         
         $parqueadero = new Parqueadero();

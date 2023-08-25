@@ -24,9 +24,6 @@ $query = mysqli_query($con, $sql);
 <body>
     <div>
         <form action="busqueda_cliente.php" method='POST'>
-                <!-- <h1>Buscar usuarios</h1>
-                <input type="text" name="cedula" class="cedula" placeholder='Ingrese el número de documento'>
-                <input type="submit" value="Buscar"> -->
         </form>
     </div>
     <div>

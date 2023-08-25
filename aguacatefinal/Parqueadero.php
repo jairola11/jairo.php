@@ -4,8 +4,8 @@ include 'Vehiculo.php';
 include 'Cliente.php';
 
 class Parqueadero {
-    public $tarifaHora = 2000; // USD
-    public $espacios = array(); // Array de espacios
+    public $tarifaHora = 2000; 
+    public $espacios = array(); 
 
     public function ingresarVehiculo($piso, $espacio, $vehiculo, $cliente, $horaIngreso) {
         $this->espacios[$piso][$espacio] = array(

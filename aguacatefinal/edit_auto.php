@@ -1,5 +1,4 @@
 <?php
-// Llamar el archivo de conexión
 include('conexion.php');
 
 $con = connection();

@@ -4,39 +4,25 @@ include('conexion.php');
 $con = connection();
 
 $placa = $_GET['id'];
-
-// Realiza una consulta para obtener los datos del vehículo antes de la actualización
 $sql = "SELECT placa, horaIngreso FROM parquear WHERE placa='$placa'";
 $query = mysqli_query($con, $sql);
-
-// Verifica si la consulta fue exitosa
 if ($query) {
-    // Obtiene los datos del vehículo
     $row = mysqli_fetch_array($query);
-
-    // Obtiene la hora de salida
     $horaSalida = date('Y-m-d H:i:s');
     $horaSalidaPrint = date('Y-m-d H:i:s');
-
-    // Actualiza la hora de salida en la base de datos
     $updateSql = "UPDATE parquear SET horaSalida='$horaSalida' WHERE placa='$placa'";
     $updateQuery = mysqli_query($con, $updateSql);
 
     if (!$updateQuery) {
-        // Error en la actualización
+
         echo "Error en la actualización: " . mysqli_error($con);
     }
 } else {
-    // Error en la consulta
     echo "Error en la consulta: " . mysqli_error($con);
 };
-
-// Calcula la diferencia de tiempo en segundos
 $horaIngreso = strtotime($row['horaIngreso']);
 $horaSalida = strtotime($horaSalida);
 $diferenciaTiempoSegundos = $horaSalida - $horaIngreso;
-
-// Calcula el costo por hora (por ejemplo, $5 por hora)
 $costoPorHora = 2;
 $costoTotal = ceil($diferenciaTiempoSegundos / 3600) * $costoPorHora;
 
@@ -49,55 +35,49 @@ $costoTotal = ceil($diferenciaTiempoSegundos / 3600) * $costoPorHora;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SALIDA</title>
     <style>
-        /* Archivo CSS (estilo.css) */
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Color de fondo gris claro */
-    margin: 0; /* Elimina el margen predeterminado del cuerpo */
-    padding: 0; /* Elimina el espacio de relleno predeterminado del cuerpo */
+    background-color: #f0f0f0; 
+    margin: 0;
+    padding: 0; 
 }
 
 .factura {
-    width: 50%; /* Ancho del contenedor de la factura */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    padding: 20px; /* Espaciado interno para el contenedor */
-    background-color: #fff; /* Color de fondo blanco para el contenedor */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera alrededor del contenedor */
+    width: 50%; 
+    margin: 0 auto;
+    padding: 20px; 
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 .atualizar {
-    text-align: center; /* Centra el texto del encabezado horizontalmente */
+    text-align: center;
 }
 
 h2 {
-    color: blue; /* Color de texto verde para el título */
+    color: blue; 
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px; /* Espacio superior entre la tabla y el encabezado */
+    margin-top: 20px;
 }
 
 th, td {
     padding: 10px;
     text-align: center;
-    border: 1px solid #ccc; /* Borde delgado alrededor de las celdas */
+    border: 1px solid #ccc; 
 }
 
 th.espace1 {
-    width: 30%; /* Ancho para las columnas de etiquetas */
+    width: 30%; 
 }
-
-/* Estilo para los datos en negrita */
 .datos {
     font-weight: bold;
 }
-
-/* Estilo para el valor a pagar */
 .datos.valor {
-    color: red; /* Color rojo para resaltar el valor a pagar */
+    color: red; 
 }
 
     </style>
