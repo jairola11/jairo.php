@@ -86,7 +86,7 @@ class UsuarioController extends Controller
     {
         $usuarios = Usuario::all();
         $pdf = PDF::loadView('pdf', ['usuarios' => $usuarios]);
-        return $pdf->stream('pdf.pdf');
+        return $pdf->download('pdf.pdf');
     }
  
 }

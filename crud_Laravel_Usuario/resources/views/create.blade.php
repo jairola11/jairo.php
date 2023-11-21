@@ -3,7 +3,6 @@
 @section('titulo')
 Regístrate aquí 
 @endsection
-
 @section('contenido')
     <div class="flex justify-center items-center">
         <div class="w-7/12 bg-white p-6 rounded-lg shadow-xl">

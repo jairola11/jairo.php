@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert2@7.3.0/dist/sweetalert2.all.js"></script>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
     <style>
@@ -23,6 +24,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
+   
 </head>
 <body class="bg-gray-100">
     <header class="p-5 flex justify-between items-center">
