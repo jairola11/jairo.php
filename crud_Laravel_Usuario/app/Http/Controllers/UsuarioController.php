@@ -88,12 +88,5 @@ class UsuarioController extends Controller
         $pdf = PDF::loadView('pdf', ['usuarios' => $usuarios]);
         return $pdf->stream('pdf.pdf');
     }
-
-    public function export_user($id)
-    {
-        $usuario = Usuario::find($id);
-        $pdf = PDF::loadView('pdfu', ['usuario' => $usuario]);
-        return $pdf->stream('pdf.pdf');
-    }
-    
+ 
 }

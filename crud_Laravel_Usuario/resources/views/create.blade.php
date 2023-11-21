@@ -7,7 +7,7 @@ Regístrate aquí
 @section('contenido')
     <div class="flex justify-center items-center">
         <div class="w-7/12 bg-white p-6 rounded-lg shadow-xl">
-            <form action="{{ route('users.store') }}" method="POST">
+            <form action="{{ route('users.almacenar') }}" method="POST">
                 @csrf
                 <div class="mb-4">
                     <label for="nombre" class="block text-gray-600 font-semibold">Nombre</label>

@@ -30,7 +30,7 @@
              Crud Laravel
         </h1>
         <nav class="flex gap-4 items-center">
-            <a class="navbar-link" href="{{route('users.create')}}">
+            <a class="navbar-link" href="{{route('users.crear')}}">
                 Crear Usuario
             </a>
             <a class="navbar-link" href="{{route('users.index')}}">

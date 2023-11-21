@@ -31,8 +31,8 @@
                     <td class="py-2 px-3 border-b">{{ $usuario->telefono }}</td>
                     <td class="py-2 px-3 border-b">{{ $usuario->direccion }}</td>
                     <td class="py-2 px-3 border-b flex flex-col items-center">
-                        <a href="{{ route('users.edit',$usuario->id) }}" class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded mb-1 inline-block">Editar</a>
-                        <form action="{{ route('users.destroy', $usuario->id) }}" method="POST" class="bg-rose-400 hover:bg-rose-500 text-white px-3 py-1 rounded">
+                        <a href="{{ route('users.editar',$usuario->id) }}" class="bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded mb-1 inline-block">Editar</a>
+                        <form action="{{ route('users.destruir', $usuario->id) }}" method="POST" class="bg-rose-400 hover:bg-rose-500 text-white px-3 py-1 rounded">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="w-full">Eliminar</button>

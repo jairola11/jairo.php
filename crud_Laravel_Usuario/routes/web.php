@@ -19,15 +19,12 @@ Route::get('/', function () {
 });
 
 Route::get('/', [UsuarioController::class, 'index'])->name('users.index');
-Route::get('/user/create', [UsuarioController::class, 'create'])->name('users.create');
-Route::post('user',[UsuarioController::class,'store'])->name('users.store');
-Route::get('user/{user}/edit',[UsuarioController::class,'edit'])->name('users.edit');
-Route::put('user/{user}',[UsuarioController::class,'update'])->name('users.update');
-Route::delete('user/{user}',[UsuarioController::class,'destroy'])->name('users.destroy');
+Route::get('/user/create', [UsuarioController::class, 'create'])->name('users.crear');
+Route::post('user',[UsuarioController::class,'store'])->name('users.almacenar');
+Route::get('user/{user}/edit',[UsuarioController::class,'edit'])->name('users.editar');
+Route::put('user/{user}',[UsuarioController::class,'update'])->name('users.actualizar');
+Route::delete('user/{user}',[UsuarioController::class,'destroy'])->name('users.destruir');
 
-/* Exportar Usuario/s */
-
-Route::get('/export_user_pdf',[UsuarioController::class,'export_user_pdf'])->name('export_user_pdf');
-Route::get('/export-user/{id}', [UsuarioController::class,'export_user'])->name('export_user');
+Route::get('/export_user_pdf',[UsuarioController::class,'export_user_pdf'])->name('export_user_pdf');   
 
 

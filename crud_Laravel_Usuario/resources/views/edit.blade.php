@@ -7,7 +7,7 @@
 @section('contenido')
     <div class="flex justify-center items-center">
         <div class="w-8/12 bg-white p-6 rounded-lg shadow-xl">
-            <form action="{{ route('users.update', $usuario->id) }}" method="POST">
+            <form action="{{ route('users.actualizar', $usuario->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="mb-5">
